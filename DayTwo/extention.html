@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extensions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+      color: white;
+      padding: 2rem;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      background-color: #1e2a3a;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      gap: 1rem;
+    }
+
+    .header img {
+      height: 40px;
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .header .search-bar {
+      margin-left: auto;
+      background-color: #2c3e50;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .filters {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      justify-content: flex-end;
+    }
+
+    .filters button {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #2c3e50;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .filters button.active {
+      background-color: #e74c3c;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background-color: #2c3e50;
+      border-radius: 12px;
+      padding: 1rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card .icon {
+      font-size: 1.5rem;
+      padding: 0.6rem;
+      border-radius: 10px;
+      width: fit-content;
+      color: black;
+    }
+
+    .card h3 {
+      font-weight: 600;
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      color: #dcdcdc;
+    }
+
+    .card button {
+      background-color: #1b1f23;
+      border: none;
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      color: white;
+      cursor: pointer;
+      margin-top: auto;
+      margin-right: 100px;
+      transition: background 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #e74c3c;
+    }
+
+    .toggle {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    .toggle input[type="checkbox"] {
+      display: none;
+    }
+
+    .toggle label {
+      background-color: #444;
+      border-radius: 50px;
+      cursor: pointer;
+      display: block;
+      height: 20px;
+      position: relative;
+      width: 36px;
+    }
+
+    .toggle label::after {
+      content: '';
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      transition: 0.3s;
+    }
+
+    .toggle input:checked + label {
+      background-color: #e74c3c;
+    }
+
+    .toggle input:checked + label::after {
+      transform: translateX(16px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="logo" />
+    <h1>Extensions</h1>
+    <div class="search-bar">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search..." style="background: none; border: none; color: white; outline: none;" />
+    
+    </div>
+  </div>
+
+  <div class="filters">
+    <button class="active">All</button>
+    <button>Active</button>
+    <button>Inactive</button>
+  </div>
+
+  <h2 style="margin-bottom: 1rem;">Extensions List</h2>
+
+  <div class="grid">
+    <!-- Add 12 extension cards -->
+    <div class="card" style="background-color:#162f3e">
+      <div class="icon" style="background-color:#d5f3f5">📷</div>
+      <h3>DevLens</h3>
+      <p>Quickly inspect page layouts and visualize element boundaries.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="devlens" checked>
+        <label for="devlens"></label>
+      </div>
+    </div>
+    <div class="card" style="background-color:#1c3347">
+      <div class="icon" style="background-color:#fffbd5">📐</div>
+      <h3>StyleSpy</h3>
+      <p>Instantly analyze and copy CSS from any webpage element.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="stylespy" checked>
+        <label for="stylespy"></label>
+      </div>
+    </div>
+    <div class="card" style="background-color:#1f3a52">
+      <div class="icon" style="background-color:#ff9c9c">🚀</div>
+      <h3>SpeedBoost</h3>
+      <p>Optimizes browser resource usage to accelerate page loading.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="speedboost">
+        <label for="speedboost"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon" style="background-color:#fcdde5">📄</div>
+      <h3>JSONWizard</h3>
+      <p>Formats, validates, and prettifies JSON responses in-browser.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="jsonwizard" checked>
+        <label for="jsonwizard"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon" style="background-color:#e6d2f5">🗂</div>
+      <h3>TabMaster Pro</h3>
+      <p>Organizes browser tabs into groups and sessions.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="tabmaster">
+        <label for="tabmaster"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon" style="background-color:#c9e4ff">📱</div>
+      <h3>ViewportBuddy</h3>
+      <p>Simulates various screen resolutions directly within the browser.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="viewport">
+        <label for="viewport"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon" style="background-color:#b5d5f8">📝</div>
+      <h3>Markup Notes</h3>
+      <p>Enables annotation and notes directly onto webpages for debugging.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="markup" checked>
+        <label for="markup"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon" style="background-color:#ccc">📏</div>
+      <h3>GridGuides</h3>
+      <p>Overlay customizable grids and alignment guides on any webpage.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="gridguides">
+        <label for="gridguides"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon" style="background-color:#c3f0d3">🎨</div>
+      <h3>Palette Picker</h3>
+      <p>Instantly extracts color palettes from any webpage.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="palette" checked>
+        <label for="palette"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon" style="background-color:#ffe0b3">🔗</div>
+      <h3>LinkChecker</h3>
+      <p>Scans and highlights broken links on any page.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="linkchecker">
+        <label for="linkchecker"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon" style="background-color:#b8f1fc">🧩</div>
+      <h3>DOM Snapshot</h3>
+      <p>Capture and export DOM structures quickly.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="domsnapshot">
+        <label for="domsnapshot"></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon" style="background-color:#caffd0">💻</div>
+      <h3>ConsolePlus</h3>
+      <p>Enhanced developer console with advanced filtering and logging.</p>
+      <button>Remove</button>
+      <div class="toggle">
+        <input type="checkbox" id="consoleplus">
+        <label for="consoleplus"></label>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
