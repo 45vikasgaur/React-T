@@ -67,6 +67,7 @@ body {
       --blur-opacity: .1;
     }
   
+
     &.toggle .grid * {
       transition-duration: 0s !important;
     }
