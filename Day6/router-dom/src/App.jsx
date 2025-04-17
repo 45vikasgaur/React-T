@@ -39,14 +39,14 @@ import { Route, Routes } from "react-router-dom";
 function App(){
   return (
       <>
-      <button>A</button>
-      <button>B</button>
-      <button>C</button>
+      <button><link to ={"/a"} />A</button>
+      <button><link to ={"/b"} />B</button>
+      <button><link to ={"/c"} />C</button>
       <Routes>
-        <Route path="/" element={<h1>Default Page</h1>} />
-        <Route path="/a" element={<A/>} />
-        <Route path="/b" element={<B/>} />
-        <Route path="/c" element={<C/>} />
+        <Route exact path="/" element={<h1>Default Page</h1>} />
+        <Route exact path="/a" element={<A/>} />
+        <Route exact path="/b" element={<B/>} />
+        <Route exact path="/c" element={<C/>} />
       </Routes>
       </>
   )
