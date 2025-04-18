@@ -11,3 +11,10 @@ router.get('/about', (req, res) => {
 })
 
 module.exports = router
+
+// const data = [
+//   { email: "vikas@gmail.com", password: "vikas123" },
+//   { email: "ragul@gmail.com", password: "ragul123" },
+//   { email: "rohit@gmail.com", password: "rohit123" }, 
+// ];
+

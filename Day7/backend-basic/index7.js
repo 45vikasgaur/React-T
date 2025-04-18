@@ -34,19 +34,8 @@ app.listen(port, () => {
 })
 
 
-const data =[
-{
-  id: 1,
-  name: 'a', 
-}
-,
-{
-  id: 2,
-  name: 'b',
-}
-,
-{
-  id: 3,
-  name: 'c',
-}
-]
+const data = [
+  { email: "vikas@gmail.com", password: "vikas@123" },
+  { email: "ragul@gmail.com", password: "ragul@123" },
+  { email: "rohit@gmail.com", password: "rohit@123" },
+];
